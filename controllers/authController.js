@@ -45,7 +45,7 @@ export const registerController= async(req,res)=>{//call back function
             role: role === null ? 0 : role
         }).save();
         res.status(201).send({
-            succes:true,
+            success:true,
             message:"User Registered Succesfully",
             user,
         });
@@ -66,7 +66,7 @@ export const loginController= async(req,res)=>{
         //validation
         if(!email || !password){
             return req.status(404).send({
-                succes:false,
+                success:false,
                 message: 'Invalid email or password',
             });
         }
@@ -74,14 +74,14 @@ export const loginController= async(req,res)=>{
         const user = await userModel.findOne({email});
         if(!user){
             return res.status(404).send({
-                succes:false,
+                success:false,
                 message:"Email is not registered"
             });
         }
         const match = await comparePassword(password,user.password);
         if(!match){
             return res.status(200).send({
-                succes:false,
+                success:false,
                 message:"Invalid Password"
             });
         }
@@ -91,7 +91,7 @@ export const loginController= async(req,res)=>{
             expiresIn: '7d'
         });
         res.status(200).send({
-            succes:true,
+            success:true,
             message: "Login Successfully",
             user:{
                 name:user.name,
@@ -104,7 +104,7 @@ export const loginController= async(req,res)=>{
     } catch (error) {
         console.log(error);
         res.status(500).send({
-            succes:false,
+            success:false,
             message: "Error in login",
             error,
         });
