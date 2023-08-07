@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Playfair Display', serif; */
+
+/* icons design */
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container h2{
+  align-items: center;
+  justify-content: center;
+  margin-top: 7px;
+  margin-left: 14px;
+  display: flex;
+  font-weight: 600;
+}
+.water-wave{
+  width: 30px;
+  height: 30px;
+  background: #35b3e7;
+  border-radius: 50%;
+  box-shadow: inset 0 0 7px 0 rgba(0,0,0,0.8),0 0 7px 0 rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.water-wave:after,
+.water-wave:before{
+  content: "";
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  top: -50%;
+  left: 50%;
+  background: #fff;
+}
+.water-wave:after{
+  border-radius: 45%;
+  animation: water-wave 5s linear infinite;
+}
+.water-wave:before{
+  border-radius: 35%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: water-wave 5s linear infinite;
+}
+@keyframes water-wave{
+  0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+    top: -30%;
+  }
+  50%{
+    top: -50%;
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+    top: -30%;
+  }
+}
+
+
+/* navbar css */
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: solid gray !important;
+}
+
+.navlink{
+  font-weight: 300 !important;
+}
+
+.active{
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
+
+/* ===================footer================ */
+.footer{
+  width: 100%;
+  /* position: absolute; */
+  bottom: 0;
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.row{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* fo */
+}
+
+.col{
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+  flex-basis: 15%;
+}
+
+.col h3{
+  width: fit-content;
+  width: -moz-fit-content;
+  margin-bottom: 40px;
+  position: relative;
+  font-size: 20px;
+}
+.col p{
+  margin-bottom: 2px !important;
+}
+
+.email-id{
+  width: fit-content;
+  width: -moz-fit-content;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+.col h4{
+  margin-top: 20px;
+  font-size: 16px;
+}
+.raw{
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+form{
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+form .far{
+  font-size: 18px;
+  margin-right: 10px;
+}
+form input{
+  width: 100%;
+  background: transparent;
+  color: #ccc;
+  border: 0;
+  outline: none;
+}
+form button{
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+form button .fas{
+  font-size: 16px;
+  color: #ccc;
+}
+
+.social-icons .fa-brands{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #000;
+  background: #fff;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+hr{
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 20px auto;
+}
+.copy{
+  text-align: center;  
+}
+.copy span{
+  font-style: italic;
+}
+
+.underline{
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  overflow: hidden;
+}
+.underline span{
+  width: 15px;
+  height: 100%;
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+@keyframes moving{
+  0%{
+    left: -20px;
+  }
+  100%{
+    left: 100%;
+  }
+}
+
+@media (max-width: 700px){
+  footer{
+    bottom: unset;
+  }
+  .col{
+    flex-basis: 100%;
+  }
+  .col:nth-child(2),.col:nth-child(3){
+    flex-basis: 100%;
+  }
+}
+
+/* =========================================
+============PAGE NOT FOUND CSS=========== */
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading {
+  font-weight: normal;
+}
+
+.pnf-btn {
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ==========================================
+===============Register Page=============== */
+
+.register form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column !important;
+}
